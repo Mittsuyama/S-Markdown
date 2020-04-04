@@ -35,6 +35,7 @@
     "prettier": "^1.19.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-hook-form": "^5.2.0",
     "umi": "^3.0.14",
     "uuid": "^7.0.2",
     "yorkie": "^2.0.0"
