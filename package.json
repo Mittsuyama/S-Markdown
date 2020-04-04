@@ -1,0 +1,42 @@
+{
+  "name": "s-makrdown",
+  "version": "0.1.0",
+  "author": "MITSUYAMA",
+  "private": true,
+  "main": "electron/main.js",
+  "homepage": "./",
+  "scripts": {
+    "start": "umi dev",
+    "build": "umi build",
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
+    "test": "umi-test",
+    "test:coverage": "umi-test --coverage"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,less,md,json}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
+    ]
+  },
+  "devDependencies": {
+    "electron": "^8.2.0",
+    "electron-builder": "^22.4.1"
+  },
+  "dependencies": {
+    "@umijs/preset-react": "1.x",
+    "@umijs/test": "^3.0.14",
+    "electron-is-dev": "^1.1.0",
+    "lint-staged": "^10.0.7",
+    "prettier": "^1.19.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "umi": "^3.0.14",
+    "uuid": "^7.0.2",
+    "yorkie": "^2.0.0"
+  }
+}

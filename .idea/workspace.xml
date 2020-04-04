@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ccb5d8cd-22a9-4ee1-9cc4-c6683c02c07f" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="r3rokucd" />
+  </component>
+  <component name="ProjectId" id="1ZlVkNSRf0NEonOCDjm68Nleezw" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="javascript.nodejs.core.library.configured.version" value="12.12.0" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ccb5d8cd-22a9-4ee1-9cc4-c6683c02c07f" name="Default Changelist" comment="" />
+      <created>1585413810016</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585413810016</updated>
+      <workItem from="1585413816731" duration="1330000" />
+      <workItem from="1585467333065" duration="3004000" />
+      <workItem from="1585494231102" duration="3684000" />
+      <workItem from="1585922191376" duration="1367000" />
+      <workItem from="1585924304127" duration="1474000" />
+      <workItem from="1585968061012" duration="1520000" />
+      <workItem from="1585971038290" duration="276000" />
+      <workItem from="1585976728800" duration="7000" />
+      <workItem from="1585980211841" duration="482000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="399" y="106" key="SettingsEditor" timestamp="1585497882024">
+      <screen x="0" y="23" width="1680" height="972" />
+    </state>
+    <state x="399" y="106" key="SettingsEditor/0.23.1680.972@0.23.1680.972" timestamp="1585497882024" />
+    <state x="505" y="237" width="670" height="676" key="search.everywhere.popup" timestamp="1585495528289">
+      <screen x="0" y="23" width="1680" height="972" />
+    </state>
+    <state x="505" y="237" width="670" height="676" key="search.everywhere.popup/0.23.1680.972@0.23.1680.972" timestamp="1585495528289" />
+  </component>
+</project>
