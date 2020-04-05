@@ -1,12 +1,126 @@
 .home-container {
-  width: 100%;
+  @left-gap: 20px;
   height: 100%;
+
   .navigation {
-    width: 100px;
+    width: 250px;
     height: 100%;
-    overflow-y: auto;
-    background-color: black;
+    background-color: #2C3236;
+    color: #adadad;
+    display: flex;
+    flex-direction: column;
+
+    .nav-head {
+      height: 50px;
+      -webkit-app-region: drag;
+    }
+
+    .nav-main {
+      flex: 1;
+      overflow-y: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+
+      .menu-list {
+        .item {
+          .iconfont {
+            font-size: 16px;
+            margin-right: 8px;
+            color: #999;
+          }
+          padding: 2px 0 2px @left-gap;
+          cursor: pointer;
+          transition-duration: 0.2s;
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #eee;
+          }
+          .title {
+            letter-spacing: 0.5px;
+            font-size: 15px;
+          }
+        }
+
+        .gap {
+          height: 20px;
+          -webkit-app-region: drag;
+        }
+      }
+
+      .folder-list {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+        .head {
+          padding: 5px @left-gap;
+          letter-spacing: 0.5px;
+          display: flex;
+          justify-content: space-between;
+          .title-box {
+            .iconfont {
+              font-size: 16px;
+              margin-right: 8px;
+              color: #999;
+            }
+          }
+          .add-box {
+            margin-top: -3px;
+          }
+        }
+        .main {
+          flex: 1;
+          overflow-y: auto;
+          .list-box {
+            .item {
+              .item-head {
+                display: flex;
+                line-height: 25px;
+                justify-content: space-between;
+                cursor: pointer;
+                transition-duration: 0.2s;
+                &:hover {
+                  background-color: rgba(255, 255, 255, 0.1);
+                }
+                &:hover .add-kid {
+                  opacity: 1;
+                }
+                .add-kid {
+                  margin-right: @left-gap;
+                  opacity: 0;
+                  transition-duration: .2s;
+                }
+                .title {
+                  flex: 1;
+                  display: flex;
+                  font-size: 16px;
+                  letter-spacing: 0.5px;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                  .icon-box {
+                    width: 22px;
+                    padding-top: 3px;
+                    cursor: pointer;
+                    &:hover {
+                      color: #eee;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .foot {
+      padding-left: @left-gap - 10;
+      height: 45px;
+    }
   }
+
   .folder {
 
   }

@@ -1,0 +1,55 @@
+.icon-button-box {
+  border-radius: 7px;
+  text-align: center;
+  transition-duration: 0.2s;
+  cursor: pointer;
+  color: #888;
+
+  .iconfont {
+    margin-right: 0;
+  }
+}
+
+.big {
+  @width: 35px;
+  @height: 35px;
+  width: @width;
+  height: @height;
+  .iconfont {
+    font-size: 22px;
+    line-height: @height;
+  }
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #eee;
+  }
+}
+
+.normal {
+  @width: 33px;
+  @height: 33px;
+  width: @width;
+  height: @height;
+  .iconfont {
+    font-size: 20px;
+    line-height: @height;
+  }
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #eee;
+  }
+}
+
+.small {
+  @width: 28px;
+  @height: 28px;
+  width: @width;
+  height: @height;
+  .iconfont {
+    font-size: 18px;
+    line-height: @height;
+  }
+  &:hover {
+    color: #fff;
+  }
+}

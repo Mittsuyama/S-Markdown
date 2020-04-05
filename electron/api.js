@@ -45,6 +45,29 @@ const listFile = (path) => {
   })
 };
 
+const updateFile = (path, content) => {
+  return new Promise((resolve, reject) => {
+    fs.readFile(path, function(error, data) {
+      if(error) {
+        reject(error);
+      } else {
+        const origin = JSON.parse(data.toString());
+        const newContent = {
+          ...origin,
+          ...content,
+        };
+        fs.writeFile(path, JSON.stringify(newContent), function(error) {
+          if(error) {
+            reject(error);
+          } else {
+            resolve(200);
+          }
+        })
+      }
+    });
+  });
+};
+
 module.exports = () => {
   ipcMain.on('add-folder', async(event, arg) => {
     const newID = uuid.v1();
@@ -55,13 +78,13 @@ module.exports = () => {
       folder: arg.folder || 0,
       create_time: nowTime,
       update_time: nowTime,
+      expand: true,
     };
     const result = await newFile(path.join(__dirname, `${ROOT}/folder/${newID}.json`), JSON.stringify(conf));
     if(result === 200) {
       event.reply('add-folder-reply', { status: 200 });
     }
   });
-
   ipcMain.on('fetch-folder-list', async (event, _) => {
     const result = await listFile(path.join(__dirname, `${ROOT}/folder`));
     if(result.status === 200) {
@@ -97,6 +120,12 @@ module.exports = () => {
         event.reply('fetch-folder-list-reply', { status: 200, data: buildTree('0') });
       });
     }
-  })
+  });
+  ipcMain.on('update-folder', async (event, arg) => {
+    const result = await updateFile(path.join(__dirname, `${ROOT}/folder/${arg.id}.json`), arg.content);
+    if(result === 200) {
+      event.reply('update-folder-reply', { status: 200 });
+    }
+  });
 };
 
