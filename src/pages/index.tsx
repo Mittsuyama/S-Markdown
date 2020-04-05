@@ -1,22 +1,51 @@
 import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import './index.less';
-// @ts-ignore
-const { ipcRenderer } = window.electron;
+import electronAjax  from '@/utils/electronAjax';
+import { history } from 'umi';
 
 export default () => {
   // @ts-ignore
+  history.push('/home');
   const { register, handleSubmit } = useForm();
-  const [info, setInfo] = useState([]);
+  const [folderList, setFolderList] = useState([]);
 
   useEffect(() => {
-    fetchFolders();
-    setInfo([]);
+    fetch();
   }, []);
+
+  const addFolder = async (value: any) => {
+    const result: any = await electronAjax('add-folder', value);
+    if(result.status === 200) {
+      fetch();
+    }
+  };
+
+  const fetch = () => {
+    (async function() {
+      const result: any = await electronAjax('fetch-folder-list', {});
+      if(result.status === 200) {
+        setFolderList(result.data);
+      }
+    })();
+  };
+
+  const folderListRender = (folder: any) => {
+    return (
+      folder.map((item: any) => {
+        return (
+          <div className="item" key={item.id}>
+            {item.id} - {item.name}
+            {item.children.length > 0 ? folderListRender(item.children) : null}
+          </div>
+        );
+      })
+    );
+  };
 
   return (
     <div className="home-container">
-      <div className="info-container">{infoRender(info)}</div>
+      <div className="info-container">{folderListRender(folderList)}</div>
       <div className="form-container">
         <form onSubmit={handleSubmit(addFolder)} className="item">
           <input type="text" name="name" ref={register}/>
@@ -30,21 +59,3 @@ export default () => {
     </div>
   );
 }
-
-const addFolder = (value: any) => {
-  const result = ipcRenderer.sendSync('add-folder', value);
-  console.log(value);
-};
-
-const infoRender = (info: any) => {
-   return (
-     <div>files list</div>
-   );
-};
-
-const fetchFolders = () => {
-  const result = ipcRenderer.sendSync('fetch-folders-structure');
-  if(result.status === 200) {
-    console.log(result.data);
-  }
-};

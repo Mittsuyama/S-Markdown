@@ -1,17 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ccb5d8cd-22a9-4ee1-9cc4-c6683c02c07f" name="Default Changelist" comment="" />
+    <list default="true" id="ccb5d8cd-22a9-4ee1-9cc4-c6683c02c07f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/electron/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/electron/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/electron/data/folder/21988160-7652-11ea-a30a-97567107c351.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/electron/data/folder/3c224230-7654-11ea-a30a-97567107c351.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/electron/data/folder/49ea7a70-7656-11ea-9011-61597718feba.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/electron/data/folder/d6481c20-7651-11ea-a30a-97567107c351.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/document.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/document.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="r3rokucd" />
   </component>
   <component name="ProjectId" id="1ZlVkNSRf0NEonOCDjm68Nleezw" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -19,6 +34,7 @@
     <option name="showMembers" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.12.0" />
@@ -26,6 +42,11 @@
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/pages/home/folder" />
+    </key>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -46,6 +67,8 @@
       <workItem from="1585971038290" duration="276000" />
       <workItem from="1585976728800" duration="7000" />
       <workItem from="1585980211841" duration="5404000" />
+      <workItem from="1585998017609" duration="9000" />
+      <workItem from="1586006002087" duration="10328000" />
     </task>
     <servers />
   </component>
@@ -53,6 +76,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="464" y="308" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1586016139253">
+      <screen x="0" y="23" width="1680" height="972" />
+    </state>
+    <state x="464" y="308" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1680.972@0.23.1680.972" timestamp="1586016139253" />
     <state x="399" y="106" key="SettingsEditor" timestamp="1585497882024">
       <screen x="0" y="23" width="1680" height="972" />
     </state>
