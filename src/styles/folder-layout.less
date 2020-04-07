@@ -60,29 +60,39 @@
     }
 
     .folder-main {
-      @item-height: 33px;
+      @item-height: 35px;
       flex: 1;
       flex-shrink: 0;
       overflow: auto;
       .folder-list-box {
+        .item-gap {
+        }
         .folder-box {
           .folder-item {
             height: @item-height;
             position: relative;
-            padding: 0 11px 0 35px;
-            letter-spacing: 1px;
+            padding: 0 11px 0 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             .title {
               width: 90%;
-              font-size: 13px;
+              font-size: 15px;
               cursor: default;
               overflow: hidden;
               text-overflow: ellipsis;
               white-space: nowrap;
+              .iconfont {
+                position: relative;
+                top: 1.5px;
+                margin-right: 10px;
+                font-size: 19px;
+                color: #888;
+                //font-weight: bold;
+              }
             }
             .iconfont {
+              padding-top: 1.5px;
               font-size: 20px;
               cursor: pointer;
             }

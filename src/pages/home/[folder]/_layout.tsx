@@ -3,12 +3,15 @@ import {
   queryFolderList,
   queryAddFolder,
   queryUpdateFolder,
+  queryAddDocument,
+  queryDocumentList,
 } from '@/utils/electronApi';
 import IconButton from '@/component/icon-button';
 import InputModal from '@/component/ipnut-modal';
 
 import '@/styles/folder-layout.less'
 import shouldUpdateWithError from 'react-hook-form/dist/logic/shouldUpdateWithError';
+import ex from 'umi/dist';
 
 // @ts-ignore
 const { ipcRenderer, remote } = window.electron;
@@ -17,7 +20,9 @@ const { Menu, MenuItem } = remote;
 export default (props: any) => {
   const [search, setSearch] = useState('');
   const [folderList, setFolderList] = useState([]);
-  const [selectFolder, setSelectFolder] = useState(['3aa59af0-771d-11ea-9526-5358559de70f']);
+  const [expandList, setExpandList] = useState(['0']);
+  const [docList, setDocList] = useState({});
+  const [selectFolder, setSelectFolder] = useState(['0']);
   const [modal, setModal] = useState({
     show: false,
     title: '',
@@ -34,6 +39,15 @@ export default (props: any) => {
   };
 
   useEffect(() => {
+    (async function() {
+      const result: any = await queryDocumentList({ folder: expandList });
+      if(result.status === 200) {
+        setDocList(result.data);
+      }
+    })();
+  }, [expandList]);
+
+  useEffect(() => {
     fetch();
   }, []);
 
@@ -41,13 +55,22 @@ export default (props: any) => {
     (async function() {
       const result: any = await queryAddFolder({ name, folder });
       if(result.status === 200) {
+        handleFolderExpandChange(folder, false);
+        handleFolderClick(result.data.id);
         fetch();
       }
     })();
   };
 
+  const handleAddDocument = async (folder: string, name: string) => {
+    const result: any = await queryAddDocument({ name, folder });
+    if(result.status === 200) {
+      handleFolderExpandChange(folder, false);
+      handleFolderClick(result.data.id);
+    }
+  };
+
   const handleShowAddFolderModal = (folder: string) => {
-    console.log(folder);
     setModal({
       show: true,
       title: 'NEW FOLDER',
@@ -55,22 +78,16 @@ export default (props: any) => {
     });
   };
 
-  const handleFolderClick = (id: string) => {
-    setSelectFolder([id]);
+  const handleShowAddDocumentModal = (folder: string) => {
+    setModal({
+      show: true,
+      title: 'NEW DOCUMENT',
+      ok: (name) => handleAddDocument(folder, name),
+    });
   };
 
-  const handleFolderExpandChange = (id: string, expand: boolean) => {
-    (async function() {
-      const result: any = await queryUpdateFolder({
-        id,
-        content: {
-          expand: !expand,
-        },
-      });
-      if(result.status === 200) {
-        fetch();
-      }
-    })();
+  const handleFolderClick = (id: string) => {
+    setSelectFolder([id]);
   };
 
   const getContextMenu = (menuList: any) => {
@@ -97,13 +114,13 @@ export default (props: any) => {
       setSelectFolder([id]);
       const menu = getContextMenu([
         { label: 'New Folder', click: () => {handleShowAddFolderModal(id)} },
-        { label: 'New Document', click: () => {} },
+        { label: 'New Document', click: () => {handleShowAddDocumentModal(id)} },
         { type: 'separator' },
         { label: 'Expand',
           type: 'checkbox',
           checked: expand,
           click: () => handleFolderExpandChange(id, expand)
-          },
+        },
         { type: 'separator' },
         { label: 'Move to Another Folder', click: () => {} },
         { label: 'Move to Trash', click: () => {} },
@@ -118,35 +135,105 @@ export default (props: any) => {
     }
   };
 
+  const handleDocumentContextMenuClick = (e: any, folder: string, id: string) => {
+    if(selectFolder.length < 2) {
+      setSelectFolder([id]);
+      const menu = getContextMenu([
+        { label: 'New Folder', click: () => {handleShowAddFolderModal(folder)} },
+        { label: 'New Document', click: () => {handleShowAddDocumentModal(folder)} },
+        { type: 'separator' },
+        { type: 'separator' },
+        { label: 'Move to Another Folder', click: () => {} },
+        { label: 'Move to Trash', click: () => {} },
+        { type: 'separator' },
+        { label: 'Star Folder', click: () => {} },
+        { label: 'Rename', click: () => {} },
+        { label: 'Get Info', click: () => {} },
+        { label: 'copy link', click: () => {} },
+      ]);
+      // @ts-ignore
+      menu.popup(window.electron.remote.getCurrentWindow());
+    }
+  };
+
+  const handleFolderExpandChange = (id: string, expand: boolean) => {
+    if(expand) {
+      let tempList: any = [];
+      expandList.forEach(item => item === id ? null : tempList.push(item));
+      setExpandList(tempList);
+    } else {
+      setExpandList([ ...expandList, id ]);
+    }
+  };
+
+  const documentListRender = (layer: number, list: any) => {
+    return (
+      <div className="folder-list-box">
+        {list.sort((a: any, b: any) => {
+          return a.name.toLowerCase() < b.name.toLowerCase() ? -1 : 1;
+        }).map((item: any) => {
+          return (
+            <div className="folder-box" key={item.id}>
+              <div
+                style={{ fontWeight: selectFolder.includes(item.id) ? 'bold' : 'normal'}}
+                className={`folder-item ${selectFolder.includes(item.id)
+                  ? 'folder-select'
+                  : null }`}
+                onClick={() => handleFolderClick(item.id)}
+                onContextMenu={e => handleDocumentContextMenuClick(e, item.folder, item.id)}
+              >
+                <span
+                  className="title"
+                  style={{ paddingLeft: 30 * layer }}
+                ><i className="iconfont icon-document" />{item.name}</span>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    );
+  };
+
   const folderListRender = (layer: number, list :any) => {
     return (
       <div className="folder-list-box">
         {list.map((item: any) => {
           return (
-            <div className="folder-box" key={item.id}>
+            <div
+              className={`folder-box ${!layer ? 'item-gap' : null}`}
+              key={item.id}
+            >
               <div
+                style={{ fontWeight: selectFolder.includes(item.id) ? 'bold' : 'normal'}}
                 className={`folder-item ${selectFolder.includes(item.id)
                 ? 'folder-select'
                 : null }`}
                 onClick={() => handleFolderClick(item.id)}
-                onContextMenu={e => handleFolderContextMenuClick(e, item.id, item.expand)}
+                onContextMenu={e => handleFolderContextMenuClick(e, item.id, expandList.includes(item.id))}
               >
                 <span
                   className="title"
                   style={{ paddingLeft: 30 * layer }}
-                >{item.name}</span>
-                {item.children.length > 0 ? (
+                ><i className="iconfont icon-folder" />{item.name}</span>
                   <i
                     style={{ width: 40, height: 35 }}
-                    className={`iconfont ${item.expand ? 'icon-zhankai' : 'icon-youjiantou' }`}
-                    onClick={() => handleFolderExpandChange(item.id, item.expand)}
+                    className={`iconfont ${expandList.includes(item.id)
+                      ? 'icon-zhankai'
+                      : 'icon-youjiantou' }`
+                    }
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleFolderExpandChange(item.id, expandList.includes(item.id));
+                    }
+                    }
                   />
-                ) : (
-                  <span />
-                ) }
               </div>
-              {item.children.length > 0 && item.expand
+              {item.children.length > 0 && expandList.includes(item.id)
                 ? folderListRender(layer + 1, item.children)
+                : null}
+              {docList.hasOwnProperty(item.id) && expandList.includes(item.id)
+                // @ts-ignore
+                ? documentListRender(layer + 1, docList[item.id])
                 : null}
             </div>
           );
