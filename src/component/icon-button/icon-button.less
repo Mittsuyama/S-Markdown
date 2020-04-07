@@ -1,9 +1,12 @@
 .icon-button-box {
-  border-radius: 7px;
+  border-radius: 100px;
   text-align: center;
   transition-duration: 0.2s;
   cursor: pointer;
-  color: #888;
+  color: #777;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
 
   .iconfont {
     margin-right: 0;
@@ -19,24 +22,16 @@
     font-size: 22px;
     line-height: @height;
   }
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #eee;
-  }
 }
 
 .normal {
-  @width: 33px;
-  @height: 33px;
+  @width: 40px;
+  @height:40px;
   width: @width;
   height: @height;
   .iconfont {
-    font-size: 20px;
+    font-size: 22px;
     line-height: @height;
-  }
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #eee;
   }
 }
 
@@ -46,10 +41,7 @@
   width: @width;
   height: @height;
   .iconfont {
-    font-size: 18px;
+    font-size: 12px;
     line-height: @height;
-  }
-  &:hover {
-    color: #fff;
   }
 }

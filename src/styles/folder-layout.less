@@ -1,0 +1,114 @@
+@input-color: #f0f0f0;
+
+.folder-layout-container {
+  z-index: 30;
+  height: 100%;
+  display: flex;
+
+  .folder-container {
+    width: 350px;
+    height: 100%;
+    overflow-y: hidden;
+    background-color: #fcfcfc;
+    display: flex;
+    flex-direction: column;
+
+    -webkit-touch-callout: none;
+    -moz-user-select: none; /*火狐*/
+    -webkit-user-select: none;  /*webkit浏览器*/
+    -ms-user-select: none;   /*IE10*/
+    user-select: none;
+
+    .folder-head {
+      position: relative;
+      height: 80px;
+      padding: 0 20px 0 10px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      .folder-head-drag-box {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 30px;
+        -webkit-app-region: drag;
+      }
+
+      .input-box {
+        width: 80%;
+        height: 35px;
+        border-radius: 50px;
+        background-color: @input-color;
+        .iconfont {
+          font-size: 14px;
+          margin: 0 15px 0 20px;
+        }
+        input {
+          color: #666;
+          width: 70%;
+          height: 100%;
+          margin: 0 auto;
+          font-size: 14px;
+          background-color: @input-color;
+        }
+      }
+
+      .folder-add-box {
+        width: 10%;
+      }
+    }
+
+    .folder-main {
+      @item-height: 33px;
+      flex: 1;
+      flex-shrink: 0;
+      overflow: auto;
+      .folder-list-box {
+        .folder-box {
+          .folder-item {
+            height: @item-height;
+            position: relative;
+            padding: 0 11px 0 35px;
+            letter-spacing: 1px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .title {
+              width: 90%;
+              font-size: 13px;
+              cursor: default;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+            }
+            .iconfont {
+              font-size: 20px;
+              cursor: pointer;
+            }
+          }
+          .folder-select {
+            background-color: rgba(169, 178, 201, 0.13);
+            &::before {
+              content: "";
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 5px;
+              height: @item-height;
+              background-color: #547b99;
+            }
+          }
+        }
+      }
+    }
+  }
+  .folder-editor-container {
+    flex: 1;
+    -webkit-app-region: drag;
+  }
+}
+
+::-webkit-input-placeholder {
+  color: #ccc;
+}

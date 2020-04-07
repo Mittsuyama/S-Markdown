@@ -78,7 +78,7 @@ module.exports = () => {
       folder: arg.folder || 0,
       create_time: nowTime,
       update_time: nowTime,
-      expand: true,
+      expand: false,
     };
     const result = await newFile(path.join(__dirname, `${ROOT}/folder/${newID}.json`), JSON.stringify(conf));
     if(result === 200) {

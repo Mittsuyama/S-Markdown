@@ -1,7 +1,7 @@
 import React from 'react';
-import './iconButton.less';
+import './icon-button.less';
 
-const sizeSelect = (size: string, icon: string, click: any) => {
+const sizeSelect = (size: string) => {
   let buttonClass: string;
   switch (size) {
     case "big":
@@ -13,18 +13,14 @@ const sizeSelect = (size: string, icon: string, click: any) => {
     default:
       buttonClass = "normal";
   }
-  return (
-    <div className={`${buttonClass} icon-button-box`} onClick={click}>
-      <i className={`iconfont ${icon}`} />
-    </div>
-  )
+  return buttonClass;
 };
 
 export default (props: any) => {
   const { icon, click, size } = props;
   return (
-    <div>
-      {sizeSelect(size, icon, click)}
+    <div className={`${sizeSelect(size)} icon-button-box`} onClick={click}>
+      <i className={`iconfont ${icon}`} />
     </div>
   );
 }

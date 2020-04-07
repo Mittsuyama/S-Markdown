@@ -2,20 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ccb5d8cd-22a9-4ee1-9cc4-c6683c02c07f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/styles/home-layout.less" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.umirc.ts" beforeDir="false" afterPath="$PROJECT_DIR$/.umirc.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/electron/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/electron/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/electron/data/folder/0d0e63c0-768b-11ea-bf48-439e8f2e5cfc.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/electron/data/folder/143a7ad0-768b-11ea-bf48-439e8f2e5cfc.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/electron/data/folder/17000370-768b-11ea-bf48-439e8f2e5cfc.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/electron/data/folder/181df690-768b-11ea-bf48-439e8f2e5cfc.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/electron/data/folder/19141660-768b-11ea-bf48-439e8f2e5cfc.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/electron/data/folder/19968cd0-768b-11ea-bf48-439e8f2e5cfc.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/electron/data/folder/1a253840-768b-11ea-bf48-439e8f2e5cfc.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/electron/data/folder/207a0220-768b-11ea-bf48-439e8f2e5cfc.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/global.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/global.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/iconButton/iconButton.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/icon-button/icon-button.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/iconButton/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/icon-button/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/document.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/document.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/home/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/_layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/home/home.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/home.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/folder/_layout.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/folder/editor.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/home.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,8 +49,21 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/styles" />
       <recent name="$PROJECT_DIR$/src/pages/home/folder" />
     </key>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -75,6 +87,11 @@
       <workItem from="1585998017609" duration="9000" />
       <workItem from="1586006002087" duration="12521000" />
       <workItem from="1586019859351" duration="14218000" />
+      <workItem from="1586068594999" duration="139000" />
+      <workItem from="1586099262948" duration="8706000" />
+      <workItem from="1586133196024" duration="5932000" />
+      <workItem from="1586177710216" duration="13147000" />
+      <workItem from="1586193981655" duration="19741000" />
     </task>
     <servers />
   </component>
@@ -86,10 +103,30 @@
       <screen x="0" y="23" width="1680" height="972" />
     </state>
     <state x="464" y="308" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1680.972@0.23.1680.972" timestamp="1586016139253" />
+    <state x="578" y="262" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1586152954095">
+      <screen x="0" y="23" width="1680" height="972" />
+    </state>
+    <state x="578" y="262" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1680.972@0.23.1680.972" timestamp="1586152954095" />
+    <state x="512" y="153" key="RollbackChangesDialog" timestamp="1586237304925">
+      <screen x="0" y="23" width="1680" height="972" />
+    </state>
+    <state x="512" y="153" key="RollbackChangesDialog/0.23.1680.972@0.23.1680.972" timestamp="1586237304925" />
     <state x="399" y="106" key="SettingsEditor" timestamp="1585497882024">
       <screen x="0" y="23" width="1680" height="972" />
     </state>
     <state x="399" y="106" key="SettingsEditor/0.23.1680.972@0.23.1680.972" timestamp="1585497882024" />
+    <state x="587" y="428" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586199794371">
+      <screen x="0" y="23" width="1680" height="972" />
+    </state>
+    <state x="587" y="428" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1680.972@0.23.1680.972" timestamp="1586199794371" />
+    <state x="277" y="23" width="1245" height="953" key="dock-window-1" timestamp="1586237182794">
+      <screen x="0" y="23" width="1680" height="972" />
+    </state>
+    <state x="277" y="23" width="1245" height="953" key="dock-window-1/0.23.1680.972@0.23.1680.972" timestamp="1586237182794" />
+    <state x="505" y="234" width="670" height="675" key="run.anything.popup" timestamp="1586100408882">
+      <screen x="0" y="23" width="1680" height="972" />
+    </state>
+    <state x="505" y="234" width="670" height="675" key="run.anything.popup/0.23.1680.972@0.23.1680.972" timestamp="1586100408882" />
     <state x="505" y="237" width="670" height="676" key="search.everywhere.popup" timestamp="1585495528289">
       <screen x="0" y="23" width="1680" height="972" />
     </state>
