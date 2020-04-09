@@ -1,15 +1,15 @@
 @input-color: #f0f0f0;
 
 .folder-layout-container {
-  z-index: 30;
   height: 100%;
   display: flex;
 
   .folder-container {
-    width: 350px;
+    width: 320px;
     height: 100%;
     overflow-y: hidden;
-    background-color: #fcfcfc;
+    background-color: white;
+    flex-shrink: 0;
     display: flex;
     flex-direction: column;
 
@@ -26,6 +26,7 @@
       display: flex;
       justify-content: space-around;
       align-items: center;
+      box-shadow: 0 0 20px 5px #E7EAF1ff;
 
       .folder-head-drag-box {
         position: absolute;
@@ -37,7 +38,7 @@
 
       .input-box {
         width: 80%;
-        height: 35px;
+        height: 33px;
         border-radius: 50px;
         background-color: @input-color;
         .iconfont {
@@ -60,62 +61,37 @@
     }
 
     .folder-main {
-      @item-height: 35px;
+      background-color: #F1F3F7;
+      @item-height: 30px;
       flex: 1;
       flex-shrink: 0;
       overflow: auto;
-      .folder-list-box {
-        .item-gap {
+      padding: 0px 15px;
+      .folder-box-head {
+        position: relative;
+        margin-top: 15px;
+        border-radius: 10px;
+        height: 70px;
+        background-color: white;
+        .title {
+          width: 100%;
+          height: 100%;
+          text-align: center;
+          font-size: 20px;
         }
-        .folder-box {
-          .folder-item {
-            height: @item-height;
-            position: relative;
-            padding: 0 11px 0 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            .title {
-              width: 90%;
-              font-size: 15px;
-              cursor: default;
-              overflow: hidden;
-              text-overflow: ellipsis;
-              white-space: nowrap;
-              .iconfont {
-                position: relative;
-                top: 1.5px;
-                margin-right: 10px;
-                font-size: 19px;
-                color: #888;
-                //font-weight: bold;
-              }
-            }
-            .iconfont {
-              padding-top: 1.5px;
-              font-size: 20px;
-              cursor: pointer;
-            }
-          }
-          .folder-select {
-            background-color: rgba(169, 178, 201, 0.13);
-            &::before {
-              content: "";
-              position: absolute;
-              top: 0;
-              left: 0;
-              width: 5px;
-              height: @item-height;
-              background-color: #547b99;
-            }
-          }
+        &::before {
+          content: '';
+          position: absolute;
+          width: 5px;
+          height: 100%;
+          border-radius: 10px 0 0 10px;
+          background-color: #6893DB;
         }
       }
     }
   }
   .folder-editor-container {
     flex: 1;
-    -webkit-app-region: drag;
   }
 }
 

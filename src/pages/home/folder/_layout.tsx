@@ -6,8 +6,8 @@ import {
   queryAddDocument,
   queryDocumentList,
 } from '@/utils/electronApi';
-import IconButton from '@/component/icon-button';
-import InputModal from '@/component/ipnut-modal';
+import IconButton from '@/components/icon-button';
+import InputModal from '@/components/ipnut-modal';
 
 import '@/styles/folder-layout.less'
 import shouldUpdateWithError from 'react-hook-form/dist/logic/shouldUpdateWithError';
@@ -109,6 +109,17 @@ export default (props: any) => {
     return menu;
   };
 
+  const handleDocumentDoubleClick = (e: any, folder: string, id: string) => {
+    const { pathname } = props.history.location;
+    const pathList = pathname.split("/");
+    props.history.push({
+      pathname: `/${pathList[1]}/${pathList[2]}/${id}`,
+      query: {
+        folder,
+      }
+    });
+  };
+
   const handleFolderContextMenuClick = (e: any, id: string, expand: boolean) => {
     if(selectFolder.length < 2) {
       setSelectFolder([id]);
@@ -123,7 +134,7 @@ export default (props: any) => {
         },
         { type: 'separator' },
         { label: 'Move to Another Folder', click: () => {} },
-        { label: 'Move to Trash', click: () => {} },
+        { label: 'Delete', click: () => {} },
         { type: 'separator' },
         { label: 'Star Folder', click: () => {} },
         { label: 'Rename', click: () => {} },
@@ -144,7 +155,7 @@ export default (props: any) => {
         { type: 'separator' },
         { type: 'separator' },
         { label: 'Move to Another Folder', click: () => {} },
-        { label: 'Move to Trash', click: () => {} },
+        { label: 'Delete', click: () => {} },
         { type: 'separator' },
         { label: 'Star Folder', click: () => {} },
         { label: 'Rename', click: () => {} },
@@ -166,21 +177,21 @@ export default (props: any) => {
     }
   };
 
-  const documentListRender = (layer: number, list: any) => {
+  const documentListRender = (pathname: string, layer: number, list: any) => {
     return (
       <div className="folder-list-box">
         {list.sort((a: any, b: any) => {
           return a.name.toLowerCase() < b.name.toLowerCase() ? -1 : 1;
         }).map((item: any) => {
+          const isIncluded = selectFolder.includes(item.id);
           return (
             <div className="folder-box" key={item.id}>
               <div
-                style={{ fontWeight: selectFolder.includes(item.id) ? 'bold' : 'normal'}}
-                className={`folder-item ${selectFolder.includes(item.id)
-                  ? 'folder-select'
-                  : null }`}
+                // style={{ fontWeight: isIncluded ? 'bold' : 'normal'}}
+                className={`folder-item ${isIncluded? 'folder-select': null }`}
                 onClick={() => handleFolderClick(item.id)}
                 onContextMenu={e => handleDocumentContextMenuClick(e, item.folder, item.id)}
+                onDoubleClick={e => handleDocumentDoubleClick(e, pathname, item.id)}
               >
                 <span
                   className="title"
@@ -194,28 +205,27 @@ export default (props: any) => {
     );
   };
 
-  const folderListRender = (layer: number, list :any) => {
+  const folderListRender = (pathname: string, layer: number, list :any) => {
     return (
-      <div className="folder-list-box">
+      <div className={`folder-box-${layer ? 'item' : 'head'}`}>
         {list.map((item: any) => {
+          const isIncluded = selectFolder.includes(item.id);
           return (
-            <div
-              className={`folder-box ${!layer ? 'item-gap' : null}`}
-              key={item.id}
-            >
+            <div key={item.id}>
               <div
-                style={{ fontWeight: selectFolder.includes(item.id) ? 'bold' : 'normal'}}
-                className={`folder-item ${selectFolder.includes(item.id)
-                ? 'folder-select'
-                : null }`}
+                className={`folder-box-${layer ? 'item' : 'head'}`}
                 onClick={() => handleFolderClick(item.id)}
-                onContextMenu={e => handleFolderContextMenuClick(e, item.id, expandList.includes(item.id))}
-              >
-                <span
+                onContextMenu={e => handleFolderContextMenuClick(
+                    e, 
+                    item.id, 
+                    expandList.includes(item.id)
+                  )}>
+                <div
                   className="title"
-                  style={{ paddingLeft: 30 * layer }}
-                ><i className="iconfont icon-folder" />{item.name}</span>
-                  <i
+                  style={{ paddingLeft: 30 * layer }}>
+                  <i className="iconfont icon-folder" />
+                  <span>{item.name}</span>
+                   <i
                     style={{ width: 40, height: 35 }}
                     className={`iconfont ${expandList.includes(item.id)
                       ? 'icon-zhankai'
@@ -224,16 +234,16 @@ export default (props: any) => {
                     onClick={(e) => {
                       e.stopPropagation();
                       handleFolderExpandChange(item.id, expandList.includes(item.id));
-                    }
-                    }
+                    }}
                   />
+               </div>
               </div>
               {item.children.length > 0 && expandList.includes(item.id)
-                ? folderListRender(layer + 1, item.children)
+                ? folderListRender(`${pathname} / ${item.name}`, layer + 1, item.children)
                 : null}
               {docList.hasOwnProperty(item.id) && expandList.includes(item.id)
                 // @ts-ignore
-                ? documentListRender(layer + 1, docList[item.id])
+                ? documentListRender(`${pathname} / ${item.name}`, layer + 1, docList[item.id])
                 : null}
             </div>
           );
@@ -264,7 +274,7 @@ export default (props: any) => {
           </div>
         </div>
         <div className="folder-main">
-          {folderListRender(0, folderList)}
+          {folderListRender('', 0, folderList)}
         </div>
       </div>
       <div className="folder-editor-container">{props.children}</div>

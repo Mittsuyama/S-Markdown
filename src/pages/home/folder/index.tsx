@@ -2,6 +2,6 @@ import React from 'react';
 
 export default (props: any) => {
   return (
-    <div>function</div>
+    <div>document index</div>
   );
 }

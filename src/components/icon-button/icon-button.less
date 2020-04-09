@@ -1,5 +1,4 @@
 .icon-button-box {
-  border-radius: 100px;
   text-align: center;
   transition-duration: 0.2s;
   cursor: pointer;
@@ -14,6 +13,7 @@
 }
 
 .big {
+  border-radius: 100px;
   @width: 35px;
   @height: 35px;
   width: @width;
@@ -25,6 +25,7 @@
 }
 
 .normal {
+  border-radius: 100px;
   @width: 40px;
   @height:40px;
   width: @width;
@@ -36,12 +37,14 @@
 }
 
 .small {
-  @width: 28px;
+  border-radius: 10px;
+  @width: 35px;
   @height: 28px;
   width: @width;
   height: @height;
   .iconfont {
-    font-size: 12px;
+    color: #555;
+    font-size: 18px;
     line-height: @height;
   }
 }

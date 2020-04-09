@@ -4,48 +4,20 @@
     <list default="true" id="ccb5d8cd-22a9-4ee1-9cc4-c6683c02c07f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/electron/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/electron/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/electron/data/folder/02e6e340-7889-11ea-afeb-cfae2617610a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/electron/data/folder/1ced6fb0-789e-11ea-afeb-cfae2617610a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/electron/data/folder/231a7600-788d-11ea-afeb-cfae2617610a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/electron/data/folder/28abec50-783f-11ea-9318-794db94f45f9.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/electron/data/folder/2e0f7af0-7898-11ea-afeb-cfae2617610a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/electron/data/folder/339f9540-7898-11ea-afeb-cfae2617610a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/electron/data/folder/3aa59af0-771d-11ea-9526-5358559de70f.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/electron/data/folder/3fa3c140-7898-11ea-afeb-cfae2617610a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/electron/data/folder/46c7c200-7898-11ea-afeb-cfae2617610a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/electron/data/folder/4ede0f70-783f-11ea-9318-794db94f45f9.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/electron/data/folder/93d724b0-783d-11ea-9318-794db94f45f9.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/electron/data/folder/9cb95b20-7888-11ea-afeb-cfae2617610a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/electron/data/folder/a4878920-7889-11ea-afeb-cfae2617610a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/electron/data/folder/a69fd970-7897-11ea-afeb-cfae2617610a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/electron/data/folder/a7408ea0-7889-11ea-afeb-cfae2617610a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/electron/data/folder/ab918eb0-7888-11ea-afeb-cfae2617610a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/electron/data/folder/b081bf80-7888-11ea-afeb-cfae2617610a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/electron/data/folder/b2d58fa0-783d-11ea-9318-794db94f45f9.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/electron/data/folder/b42a5520-7888-11ea-afeb-cfae2617610a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/electron/data/folder/bd2b4850-783d-11ea-9318-794db94f45f9.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/electron/data/folder/c31c7b00-7764-11ea-b7c5-cddd0e164f13.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/electron/data/folder/c3225370-788d-11ea-afeb-cfae2617610a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/electron/data/folder/c36c6180-789d-11ea-afeb-cfae2617610a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/electron/data/folder/c37a6ce0-783d-11ea-9318-794db94f45f9.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/electron/data/folder/c5b6b9f0-788d-11ea-afeb-cfae2617610a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/electron/data/folder/c843b4c0-783d-11ea-9318-794db94f45f9.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/electron/data/folder/cd7bd0a0-7764-11ea-b7c5-cddd0e164f13.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/electron/data/folder/d76a6e20-7898-11ea-afeb-cfae2617610a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/electron/data/folder/da81c040-7898-11ea-afeb-cfae2617610a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/electron/data/folder/db22f1a0-783d-11ea-9318-794db94f45f9.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/electron/data/folder/dc489d90-7898-11ea-afeb-cfae2617610a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/electron/data/folder/dee3f140-783d-11ea-9318-794db94f45f9.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/electron/data/folder/e8f44770-7888-11ea-afeb-cfae2617610a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/electron/data/folder/ed45c740-7888-11ea-afeb-cfae2617610a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/electron/data/folder/f41a9690-7888-11ea-afeb-cfae2617610a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/electron/data/folder/f7884610-7888-11ea-afeb-cfae2617610a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/electron/data/folder/fe2f75b0-7888-11ea-afeb-cfae2617610a.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/context-menu/context-menu.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/context-menu/context-menu.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/context-menu/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/context-menu/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/icon-button/icon-button.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/icon-button/icon-button.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/icon-button/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/icon-button/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/ipnut-modal/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ipnut-modal/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/ipnut-modal/input-modal.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ipnut-modal/input-modal.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/right-menu/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/right-menu/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/right-menu/right-menu.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/right-menu/right-menu.less" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/document.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/document.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/home/[folder]/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/[folder]/_layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/[folder]/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/[folder]/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/_layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/folder-layout.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/folder-layout.less" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/home-layout.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/home-layout.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/electronAjax.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/electronAjax.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/electronApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/electronApi.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -124,7 +96,10 @@
       <workItem from="1586133196024" duration="5932000" />
       <workItem from="1586177710216" duration="13147000" />
       <workItem from="1586193981655" duration="19824000" />
-      <workItem from="1586253521073" duration="16837000" />
+      <workItem from="1586253521073" duration="17015000" />
+      <workItem from="1586280564099" duration="482000" />
+      <workItem from="1586321999357" duration="27000" />
+      <workItem from="1586325581510" duration="91000" />
     </task>
     <servers />
   </component>

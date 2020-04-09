@@ -57,7 +57,8 @@ const updateFile = (path, content) => {
           ...origin,
           ...content,
         };
-        fs.writeFile(path, JSON.stringify(newContent), function(error) {
+        fs.writeFile(path, JSON.stringify(newContent),
+          function(error) {
           if(error) {
             reject(error);
           } else {
@@ -148,9 +149,10 @@ module.exports = () => {
       tag: [],
       star: [],
       subtitle: '',
-      content: '',
+      content: `# ${arg.name}`,
     };
-    fs.mkdir(getPath(`/document/${newID}`), function(error) {
+    fs.mkdir(getPath(`/document/${newID}`),
+      function(error) {
       if(error) {
         console.log(error);
       } else {
@@ -187,6 +189,11 @@ module.exports = () => {
         event.returnValue = { status: 200, data };
       });
     }
+  });
+  ipcMain.on('fetch-document', async (event, arg) => {
+    const { id } = arg;
+    const result = await readFile(getPath(`/document/${id}/${id}.json`));
+    event.returnValue = { status : 200, data: result };
   });
 };
 

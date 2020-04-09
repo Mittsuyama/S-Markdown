@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import IconButton from '@/component/icon-button';
+import IconButton from '@/components/icon-button';
 import './input-modal.less';
 
 export default (props: any) => {

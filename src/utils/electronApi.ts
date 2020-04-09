@@ -11,3 +11,5 @@ export const queryUpdateFolder = (params: any) => ajax('update-folder', params);
 export const queryAddDocument = (params: any) => ajax('add-document', params);
 
 export const queryDocumentList = (params: any) => ajax('fetch-document-list', params);
+
+export const queryDocument = (params: any) => ajax('fetch-document', params);
